@@ -1,0 +1,41 @@
+.main-header {
+    display: grid;
+    grid-template-areas:
+            'headerLeft headerRight';
+    background-color: var(--backCol);
+    height: 1.5em;
+    font-size: 2rem;
+    align-items: center;
+    margin-left: 2em;
+    margin-right: 2em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  .header-left {
+    grid-area: headerLeft;
+  }
+
+  .header-right {
+    grid-area: headerRight;
+    justify-self: end;
+    font-family: var(--palReg);
+  }
+
+
+  .header-links {
+    color: var(--primCol);
+    text-decoration: none;
+    margin-left: 1em;
+  }
+  
+  .header-links:hover {
+    border-bottom: 2px solid currentColor;
+  }
+
+  .logo {
+    max-height: 1.5em;
+    width: auto;
+  }
+
+  
