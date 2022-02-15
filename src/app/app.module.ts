@@ -8,6 +8,7 @@ import { MainFormComponent } from './components/main-form/main-form.component';
 import { SearchFormComponent } from './components/search-form/search-form.component';
 import { ItemComponent } from './components/item/item.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { DropdownComponent } from './components/dropdown/dropdown.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { FooterComponent } from './components/footer/footer.component';
     SearchFormComponent,
     ItemComponent,
     FooterComponent,
+    DropdownComponent,
   ],
   imports: [
     BrowserModule, 
