@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Observable } from 'rxjs';
+import { categoryEnum } from 'src/app/product';
+import { ProductService } from 'src/app/services/product.service'; 
+ 
 @Component({
   selector: 'app-dropdown',
   templateUrl: './dropdown.component.html',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DropdownComponent implements OnInit {
 
-  constructor() { }
+  "productCategories" : Observable<categoryEnum>;
 
-  ngOnInit(): void {
+  constructor(private categoriesService:ProductService) { }
+
+  ngOnInit(){
+    // this.productCategories = this.categoriesService.findProductsByCategory();
   }
 
 }

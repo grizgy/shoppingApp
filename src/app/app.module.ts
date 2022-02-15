@@ -17,8 +17,8 @@ import { DropdownComponent } from './components/dropdown/dropdown.component';
     MainFormComponent,
     SearchFormComponent,
     ItemComponent,
-    FooterComponent,
-    DropdownComponent,
+    FooterComponent, 
+    DropdownComponent
   ],
   imports: [
     BrowserModule, 

@@ -39,3 +39,20 @@
     grid-template-columns: auto auto auto auto;
     grid-gap: 0.5em 1em;
   }
+
+  .search-submit, .dropbtn {
+    background-color: var(--primCol);
+    color: var(--backCol);
+    font-family: var(--palReg);
+    font-size: 1em;
+    border: 0;
+    padding: 0 2em 0 2em;
+  }
+  
+  .search-submit:hover, .dropbtn:hover {
+    opacity: 0.9;
+  }
+  
+  .search-submit:active {
+    transform: scale(0.95);
+  }
