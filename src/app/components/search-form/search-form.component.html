@@ -1,6 +1,7 @@
 <form class="search-form" action="/search" method="get">
-    <input class="search-input" type="search" id="search" name="search-input" placeholder="Search the collection"
-      required>
-    <button type="submit" class="search-submit" name="search-submit" >Search</button>
+    <input class="search-input" type="search" id="search" name="search" [(ngModel)]="search" placeholder="Search the collection"
+      required >
+    <button type="submit" class="search-submit" name="search-submit" (click)="onClick(search)" >Search</button>
   </form>
+  {{search}}
   <h1 class="search-heading"></h1>

@@ -31,11 +31,16 @@
   
   .header-links:hover {
     border-bottom: 2px solid currentColor;
+    cursor: pointer;
   }
 
   .logo {
     max-height: 1.5em;
     width: auto;
+  }
+
+  .logo:hover {
+    cursor: pointer;
   }
 
   

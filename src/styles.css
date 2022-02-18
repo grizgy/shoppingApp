@@ -51,8 +51,11 @@
   
   .search-submit:hover, .dropbtn:hover {
     opacity: 0.9;
+    cursor: pointer;
   }
   
   .search-submit:active {
     transform: scale(0.95);
   }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,0 +1,78 @@
+<section class="configurator">
+
+    <div class="preview">
+      <div class="sample-wrapper">
+        <img src={{product.image}} alt="" id="preview-image" class="sample-frame" >
+      </div>
+
+      <div class="sample-info label-like">
+        <label>
+          <strong>{{product.title}}</strong><br>
+          <i>{{product.description}}</i>, ca. {{product.price}}
+        </label>
+      </div>
+    </div>
+
+    <form class="museum-label label-like" id="config-form" action="cart.html">
+      <fieldset class="museum-fieldset">
+        <div class="range-container">
+          <div class="form-text-row">
+            <label for="frame-width-range" class="range-title">
+              Frame
+            </label>
+            <div>
+              <input type="number" value="2" min="2" max="5" aria-label="Frame Width">
+              <label>
+                cm
+              </label>
+            </div>
+          </div>
+          <input type="range" id="frame-width-range" name="frameWidthRange" min="2" max="5" step="0" value="2">
+        </div>
+      </fieldset>
+
+      <fieldset class="museum-fieldset">
+        <div class="frame-style-row">
+         
+
+          <div class="frame-style-item">
+            <input type="radio" id="frame-style-elegant" name="frameStyle" value="elegant">
+            <label for="frame-style-elegant"><img src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" alt="Elegant">Elegant</label>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset class="museum-fieldset">
+        <legend>Mat Width</legend>
+        <div class="range-container">
+          <div class="form-text-row">
+            <label for="frame-mat-range" class="range-title">
+              Mat
+            </label>
+            <div>
+              <input type="number" value="3" min="0" max="10" aria-label="Mat Width">
+              <label>
+                cm
+              </label>
+            </div>
+          </div>
+          <input type="range" id="frame-mat-range" value="3" name="frameMatRange" min="0" max="10" step="0.1">
+        </div>
+      </fieldset>
+     
+      <fieldset class="museum-fieldset summary-fieldset">
+        <legend>Summary and Submit</legend>
+        <div class="form-text-row">
+          <label>Price (excl. shipping)</label>
+          <label class="sum">€ 180.25</label>
+        </div>
+        <div class="form-text-row">
+          <label>Total Size (incl. frame and mat)</label>
+          <label>69.4 &times; 50.5 cm</label>
+        </div>
+
+        <button type="submit" id="config-submit-button">Add to Cart</button>
+      </fieldset>
+
+    </form>
+  </section>

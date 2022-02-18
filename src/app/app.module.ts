@@ -1,6 +1,8 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { Router, RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -9,6 +11,17 @@ import { SearchFormComponent } from './components/search-form/search-form.compon
 import { ItemComponent } from './components/item/item.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { DropdownComponent } from './components/dropdown/dropdown.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatInputModule} from '@angular/material/input';
+import {MatSelectModule,} from '@angular/material/select';
+import { ConfigurationComponent } from './components/configuration/configuration.component';
+import { CartItemComponent } from './components/cart-item/cart-item.component';
+
+const appRoutes:Routes = [
+  { path : '',  component: MainFormComponent } , 
+  {path : 'configuration',  component: ConfigurationComponent}
+  
+]
 
 @NgModule({
   declarations: [
@@ -18,11 +31,17 @@ import { DropdownComponent } from './components/dropdown/dropdown.component';
     SearchFormComponent,
     ItemComponent,
     FooterComponent, 
-    DropdownComponent
+    DropdownComponent, ConfigurationComponent, CartItemComponent
   ],
   imports: [
     BrowserModule, 
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatSelectModule,
+    RouterModule.forRoot(appRoutes)
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

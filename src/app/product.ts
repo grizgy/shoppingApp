@@ -5,7 +5,6 @@ export enum categoryEnum{
 
 export interface Product {
     id:number;
-    author:string;
     title:string;
     price:number;
     description:string;

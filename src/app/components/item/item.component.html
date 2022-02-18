@@ -1,8 +1,8 @@
-  <a class="search-item">
+  <a routerLink="/configuration" class="search-item" (click) = "onClickOpen(product)">
     <img class="search-item-img" src={{product.image}} alt="Some Image">
     <div class="search-item-label">
-      <p class="search-item-author">{{product.author}}</p>
+      <p class="search-item-author">{{product.id}}</p>
       <span class="search-item-title">{{product.title}}</span>
-      <span class="search-item-year"> {{product.id}}</span>
+      <span class="search-item-year"> {{product.price}}</span>
     </div>
   </a>
