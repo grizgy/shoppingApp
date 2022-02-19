@@ -9,7 +9,7 @@ import { Product } from 'src/app/product';
 export class ItemComponent implements OnInit {
 
   @Input() "product" : Product;
-  @Output() clickingOnProduct : EventEmitter <Product> = new EventEmitter();
+  // @Output() clickingOnProduct : EventEmitter <Product> = new EventEmitter();
 
   constructor() { }
 
@@ -17,7 +17,8 @@ export class ItemComponent implements OnInit {
   }
 
   onClickOpen(product:Product) {
-    this.clickingOnProduct.emit(product);
+    // this.clickingOnProduct.emit(product);
+
     console.log(product)  
   }
 

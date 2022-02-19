@@ -16,11 +16,16 @@ export class ProductService {
   getProducts () : Observable<Product[]> { 
     return this.http.get<Product[]>(this.apiUrl);
   }
-
+  
   getProductById (product:Product) : Observable<Product[]> { 
     return this.http.get<Product[]>(`${this.apiUrl}/${product.id}`);
   }
 
+
+
+
+
+  
   
   findProductsByCategory (category:categoryEnum) : Observable<Product[]> { 
     return this.http.get<Product[]>(this.apiUrl);

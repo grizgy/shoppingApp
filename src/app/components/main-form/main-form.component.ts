@@ -18,7 +18,7 @@ export class MainFormComponent implements OnInit {
   }
 
   openProduct(product:Product){
-    this.productService.getProductById(product).subscribe(() => (this.products = this.products.filter(p => p.id !== product.id)));
+    this.productService.getProductById(product);
     // this.productService.getProducts().subscribe((products) => this.products = products);
   }
 

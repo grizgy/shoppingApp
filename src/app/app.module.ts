@@ -14,12 +14,11 @@ import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule} from '@angular/material/input';
 import {MatSelectModule,} from '@angular/material/select';
-import { ConfigurationComponent } from './components/configuration/configuration.component';
 import { CartItemComponent } from './components/cart-item/cart-item.component';
 
 const appRoutes:Routes = [
   { path : '',  component: MainFormComponent } , 
-  {path : 'configuration',  component: ConfigurationComponent}
+  {path : 'configuration',  component: CartItemComponent}
   
 ]
 
@@ -31,7 +30,8 @@ const appRoutes:Routes = [
     SearchFormComponent,
     ItemComponent,
     FooterComponent, 
-    DropdownComponent, ConfigurationComponent, CartItemComponent
+    DropdownComponent,
+     CartItemComponent
   ],
   imports: [
     BrowserModule, 
