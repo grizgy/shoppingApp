@@ -18,7 +18,7 @@ import { CartItemComponent } from './components/cart-item/cart-item.component';
 
 const appRoutes:Routes = [
   { path : '',  component: MainFormComponent } , 
-  {path : 'configuration',  component: CartItemComponent}
+  {path : 'configuration/:id',  component: CartItemComponent}
   
 ]
 

@@ -1,5 +1,6 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 import { Product } from 'src/app/product';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-item',
@@ -9,17 +10,10 @@ import { Product } from 'src/app/product';
 export class ItemComponent implements OnInit {
 
   @Input() "product" : Product;
-  // @Output() clickingOnProduct : EventEmitter <Product> = new EventEmitter();
 
-  constructor() { }
+  constructor(private productService : ProductService) { }
 
   ngOnInit(): void {
-  }
-
-  onClickOpen(product:Product) {
-    // this.clickingOnProduct.emit(product);
-
-    console.log(product)  
   }
 
 }

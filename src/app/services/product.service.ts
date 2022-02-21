@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { categoryEnum, Product } from '../product';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { catchError, map, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -16,20 +15,10 @@ export class ProductService {
   getProducts () : Observable<Product[]> { 
     return this.http.get<Product[]>(this.apiUrl);
   }
-  
-  getProductById (product:Product) : Observable<Product[]> { 
-    return this.http.get<Product[]>(`${this.apiUrl}/${product.id}`);
-  }
 
-
-
-
-
-  
-  
-  findProductsByCategory (category:categoryEnum) : Observable<Product[]> { 
-    return this.http.get<Product[]>(this.apiUrl);
-  }
+  getProductById (product:number): Observable<Product>  { 
+     return this.http.get<Product>(`${this.apiUrl}/${product}`);
+     }
 
 
   // searchProductsByWord (text:string) : Observable<Product[]> { 
@@ -49,6 +38,10 @@ export class ProductService {
    // console.log(`${this.apiUrl}/?id=${text}`);
      return this.http.get<Product[]>(`${this.apiUrl}/?category=${text}`);
 
+  }
+
+  findProductsByCategory (category:categoryEnum) : Observable<Product[]> { 
+    return this.http.get<Product[]>(this.apiUrl);
   }
   
 
