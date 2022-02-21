@@ -14,7 +14,7 @@ import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule} from '@angular/material/input';
 import {MatSelectModule,} from '@angular/material/select';
-import { CartItemComponent } from './components/cart-item/cart-item.component';
+import { CartItemComponent } from './components/selected-item/cart-item.component';
 
 const appRoutes:Routes = [
   { path : '',  component: MainFormComponent } , 
