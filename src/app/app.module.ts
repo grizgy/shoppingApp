@@ -14,12 +14,15 @@ import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule} from '@angular/material/input';
 import {MatSelectModule,} from '@angular/material/select';
-import { CartItemComponent } from './components/selected-item/cart-item.component';
+import { SelectedItemComponent } from './components/selected-item/selected-item.component';
+import { CartComponent } from './components/cart/cart.component';
+import { CartItemComponent } from './components/cart-item/cart-item.component';
+
 
 const appRoutes:Routes = [
   { path : '',  component: MainFormComponent } , 
-  {path : 'configuration/:id',  component: CartItemComponent}
-  
+  {path : 'configuration/:id',  component: SelectedItemComponent},
+  {path : 'cart',  component: CartComponent}
 ]
 
 @NgModule({
@@ -31,7 +34,9 @@ const appRoutes:Routes = [
     ItemComponent,
     FooterComponent, 
     DropdownComponent,
-     CartItemComponent
+    SelectedItemComponent,
+    CartComponent,
+    CartItemComponent
   ],
   imports: [
     BrowserModule, 

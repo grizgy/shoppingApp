@@ -1,0 +1,15 @@
+<section class="cart">
+    <div id="cartItem" class="cart-item">
+      <div id="cartPic1" class="cart-preview">
+        <a routerLink="/configuration">
+          <img class="cart-thumb sample-frame-1" src="{{product.image}}" width="199" height="249" alt="image of the product">
+        </a>
+      </div>
+          <label class="cart-desc">
+              <button class="cart-desc-button" type="button">&#215;</button>
+              <span class="cart-desc-name">{{product.title}}</span><br>
+              <span class="cart-desc-text">{{product.description}}</span><br><br>
+              <span class="cart-desc-price">&euro; {{product.price}}</span>
+          </label>
+    </div>
+  </section>

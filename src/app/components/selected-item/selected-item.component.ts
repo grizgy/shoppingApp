@@ -4,11 +4,11 @@ import { ProductService } from 'src/app/services/product.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-cart-item',
-  templateUrl: './cart-item.component.html',
-  styleUrls: ['./cart-item.component.css']
+  selector: 'app-selected-item',
+  templateUrl: './selected-item.component.html',
+  styleUrls: ['./selected-item.component.css']
 })
-export class CartItemComponent implements OnInit {
+export class SelectedItemComponent implements OnInit {
 
   "productToConfigure" : Product;
 
