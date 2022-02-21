@@ -2,17 +2,78 @@
 
     <div class="preview">
       <div class="sample-wrapper">
-        <img src={{productToConfigure.image}} alt="" id="preview-image" class="sample-frame" >
+        <img src={{productToConfigure.image}} id="preview-image" class="sample-frame" >
       </div>
       <div class="sample-info label-like">
         <label>
           <strong>{{productToConfigure.title}}</strong><br>
-          <i>{{productToConfigure.description}}</i>, ca. {{productToConfigure.price}}
+          <i>{{productToConfigure.description}}</i>
         </label>
       </div>
     </div>
 
-    <form class="museum-label label-like" id="config-form">
-    
-    </form>
+
+
+     <form class="museum-label label-like" id="config-form">
+
+    <fieldset class="museum-fieldset">
+      <legend>Size</legend>
+      <div class="segmented">
+        <input type="radio" id="frame-size-large" name="frameSize" value="large" checked>
+        <label for="frame-size-large">XS<br>32”-33”</label>
+
+        <input type="radio" id="frame-size-small" name="frameSize" value="small">
+        <label for="frame-size-small">S<br>34”-35”</label>
+
+        <input type="radio" id="frame-size-medium" name="frameSize" value="medium">
+        <label for="frame-size-medium">M<br>36”-37”</label>
+
+        <input type="radio" id="frame-size-large" name="frameSize" value="large" checked>
+        <label for="frame-size-large">L<br>32”-33”</label>
+      </div>
+    </fieldset>
+
+    <fieldset class="museum-fieldset">
+      <legend>Mat Color</legend>
+      <div class="mat-color-row">
+        <div class="mat-color-item">
+          <input type="radio" id="mat-color-ivory" name="matColor" value="ivory">
+          <label for="mat-color-ivory">Ivory</label>
+        </div>
+        <div class="mat-color-item">
+          <input type="radio" id="mat-color-mint" name="matColor" value="mint">
+          <label for="mat-color-mint">Mint</label>
+        </div>
+        <div class="mat-color-item">
+          <input type="radio" id="mat-color-wine" name="matColor" value="wine">
+          <label for="mat-color-wine">Wine</label>
+        </div>
+        <div class="mat-color-item">
+          <input type="radio" id="mat-color-indigo" name="matColor" value="indigo" checked>
+          <label for="mat-color-indigo">Indigo</label>
+        </div>
+        <div class="mat-color-item">
+          <input type="radio" id="mat-color-coal" name="matColor" value="coal">
+          <label for="mat-color-coal">Coal</label>
+        </div>
+      </div>
+    </fieldset>
+
+
+
+    <fieldset class="museum-fieldset summary-fieldset">
+      <legend>Summary and Submit</legend>
+      <div class="form-text-row">
+        <label>Price (excl. shipping)</label>
+        <label class="sum">€{{productToConfigure.price}}</label>
+      </div>
+      <div class="form-text-row">
+        <label>Insert the Quantity here</label>
+      </div>
+
+      <button type="submit" class="dropbtn" id="config-submit-button" >Add to Cart</button>
+    </fieldset>
+
+  </form>
+
   </section>

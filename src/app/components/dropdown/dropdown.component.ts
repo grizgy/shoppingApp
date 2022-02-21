@@ -15,8 +15,8 @@ export class DropdownComponent implements OnInit {
   constructor(private categoriesService:ProductService) { }
 
   ngOnInit(){
-    // this.productCategories = this.categoriesService.findProductsByCategory();
   }
+  
   onClick(str:string) {
     console.log(str)  
   }

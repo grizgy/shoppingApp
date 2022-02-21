@@ -26,3 +26,6 @@
       display: block;
     }
   
+    a{
+      cursor: pointer;
+    }

@@ -148,6 +148,18 @@
     grid-template-columns: repeat(auto-fit, 300px);
   }
   
+  .museum-label {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    padding: 0px;
+    margin: 0px;
+    justify-content: center;
+    font-size: 1em;
+    font-family: var(--pal);
+  }
+  
   .search-item {
     display: grid;
     justify-items: center;
@@ -443,18 +455,6 @@
       font-family: var(--pal);
     }
   
-    .museum-label {
-      align-self: center;
-      display: flex;
-      flex-direction: column;
-      width: 400px;
-      padding: 0px;
-      margin: 0px;
-      justify-content: center;
-      font-size: 1em;
-      font-family: var(--pal);
-    }
-  
     .museum-fieldset {
       margin: 0px;
       padding: 15px 20px 15px 20px;
@@ -479,19 +479,9 @@
         margin-right: 0;
       }
   
-      .museum-label {
-        width: 100vw;
-      }
-  
       .configurator {
         margin-bottom: 0px;
       }
-    }
-  
-    .label-like {
-      background-color: var(--labCol);
-      padding: -1px;
-      box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.5);
     }
   
     .sum {
