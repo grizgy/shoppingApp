@@ -17,6 +17,7 @@ import {MatSelectModule,} from '@angular/material/select';
 import { SelectedItemComponent } from './components/selected-item/selected-item.component';
 import { CartComponent } from './components/cart/cart.component';
 import { CartItemComponent } from './components/cart-item/cart-item.component';
+import { QuantitySectionComponent } from './components/quantity-section/quantity-section.component';
 
 
 const appRoutes:Routes = [
@@ -36,7 +37,8 @@ const appRoutes:Routes = [
     DropdownComponent,
     SelectedItemComponent,
     CartComponent,
-    CartItemComponent
+    CartItemComponent,
+    QuantitySectionComponent
   ],
   imports: [
     BrowserModule, 

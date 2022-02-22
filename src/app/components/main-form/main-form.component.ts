@@ -15,10 +15,10 @@ export class MainFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.productService.getProducts().subscribe((products) => this.products = products);
-  }
 
-  openProduct(product:number){
-     this.productService.getProductById(product);
+    this.products.forEach((p : any) => {
+    Object.assign(p, {quantity:1, total: p.price});
+    });
   }
 
 }

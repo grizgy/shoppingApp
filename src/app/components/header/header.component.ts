@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  text: string = "Cart (" + 5  + ")" ;
+  private count : number = 0;
+  
+  text: string = "Cart (" + this.count  + ")" ;
 
   constructor() { }
 

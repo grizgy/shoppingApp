@@ -1,5 +1,5 @@
-    <app-cart-item *ngFor = "let product of products" [product]="product" ></app-cart-item>
+    <app-cart-item *ngFor = "let product of products; let i = index" [product]="product" ></app-cart-item>
     <div class="cart-checkout">
       <div class="cart-total-price">Total: &euro; XXXXXXX </div>
-      <button class="cart-checkout-button" type="button">Checkout</button>
+      <button class="cart-checkout-button" type="button" >Checkout</button>
     </div>
