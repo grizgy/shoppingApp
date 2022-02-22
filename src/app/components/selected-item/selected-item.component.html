@@ -68,8 +68,8 @@
         <label class="sum">€{{productToConfigure.price}}</label>
       </div>
       <div class="form-text-row">
-        <app-quantity-section></app-quantity-section>
-        <label>Total Price:€{{2*productToConfigure.price}}</label>
+        <app-quantity-section eventEmmit="receiveTotal(inputNumber)" ></app-quantity-section>
+        <label>Total Price:€{{inputNumber*productToConfigure.price}}</label> 
       </div>
       <button type="submit" class="dropbtn" id="config-submit-button" (click)="addTocart(productToConfigure)" >Add to Cart</button>
     </fieldset>

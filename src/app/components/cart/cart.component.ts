@@ -17,9 +17,13 @@ export class CartComponent implements OnInit {
   constructor(private cartService : CartService) { }
 
   ngOnInit(): void {
-    this.cartService.getProducts().subscribe((products) => this.products = products);
-    this.total = this.cartService.getTotalPrice();
-    console.log(this.total + " asdsfdsfds");
+    this.cartService.getProducts()
+    .subscribe(products => {
+      this.products = products;
+      this.total = this.cartService.getTotalPrice();
+    })
+    // console.log(this.total + " asdsfdsfds");
+
     // if (this.count == 0) {
     //   console.log("Your cart is empty")
     // } else { 

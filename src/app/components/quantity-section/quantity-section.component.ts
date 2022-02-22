@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-quantity-section',
@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuantitySectionComponent implements OnInit {
 
-  inputNumber = 0;
+  inputNumber : number = 1;
+  @Output() eventEmmit = new EventEmitter<number>();
 
   constructor() { }
 
@@ -17,15 +18,17 @@ export class QuantitySectionComponent implements OnInit {
 
   add() {
     this.inputNumber = this.inputNumber + 1;
-    console.log(this.inputNumber)
   }
 
   subtract() {
     if(this.inputNumber != 0) {
       this.inputNumber = this.inputNumber - 1;
-      console.log(this.inputNumber)
     }
-    
   }
+
+    getQuantity() {
+      console.log(this.inputNumber);
+      this.eventEmmit.emit(this.inputNumber);
+    }
 
 }

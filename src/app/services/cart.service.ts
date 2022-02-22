@@ -17,16 +17,11 @@ export class CartService {
   }
 
   addProduct(product : Product) {
-
     if( !this.cartItemList.find((t) =>t.id === product.id )) {
       this.cartItemList.push(product);
       this.productList.next(this.cartItemList);
       console.log(this.cartItemList);
     }
-
-    
-
-
   }
 
   getTotalPrice (): number {
@@ -34,7 +29,7 @@ export class CartService {
     this.cartItemList.map((p : any) => {
       total += p.total;
     })
-    return total
+    return total;
   }
 
   removeCartItem( product : Product) {
@@ -43,6 +38,7 @@ export class CartService {
         this.cartItemList.splice(index,1);
       }
     })
+    this.productList.next(this.cartItemList);
   }
 
 
