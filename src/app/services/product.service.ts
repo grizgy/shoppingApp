@@ -40,9 +40,10 @@ export class ProductService {
 
   }
 
-  findProductsByCategory (category:categoryEnum) : Observable<Product[]> { 
-    return this.http.get<Product[]>(this.apiUrl);
-  }
+  // findProductsByCategory (category:string) : Observable<Product[]> { 
+  //   // return this.http.get<Product[]>(this.apiUrl);
+  //   return this.http.get<Product[]>(`${this.apiUrl}/?category=${category}`);
+  // }
   
 
 }

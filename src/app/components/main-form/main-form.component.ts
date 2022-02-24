@@ -16,9 +16,9 @@ export class MainFormComponent implements OnInit {
   ngOnInit(): void {
     this.productService.getProducts().subscribe((products) => this.products = products);
 
-    this.products.forEach((p : any) => {
-    Object.assign(p, {quantity:1, total: p.price});
-    });
+    // this.products.forEach((p : any) => {
+    // Object.assign(p, {quantity:1, total: p.price});
+    // });
     
   }
 

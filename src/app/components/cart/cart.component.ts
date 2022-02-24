@@ -9,10 +9,9 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class CartComponent implements OnInit {
 
-  products : Product[] = [];
+  public products : Product[] = [];
   
-  private count : number = 0;
-  "total" : number;
+  public "total" !: number;
   
   constructor(private cartService : CartService) { }
 
@@ -20,16 +19,8 @@ export class CartComponent implements OnInit {
     this.cartService.getProducts()
     .subscribe(products => {
       this.products = products;
-    })
-    this.total == this.cartService.getTotalPrice();
+      this.total = this.cartService.getTotalPrice();
+    })   
   }
-
-  // calculateTotalPrice () {
-  //   this.total == this.cartService.getTotalPrice();
-  //   console.log(this.total);
-  // }
-
-
-
 
 }
