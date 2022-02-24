@@ -1,5 +1,13 @@
-    <app-cart-item *ngFor = "let product of products; let i = index" [product]="product" ></app-cart-item>
+<ng-container *ngIf="products.length !=0">
+<app-cart-item *ngFor = "let product of products; let i = index" [product]="product" ></app-cart-item>
     <div class="cart-checkout">
-      <div class="cart-total-price">Total: &euro; XXXXXXX </div>
-      <button class="cart-checkout-button" type="button" >Checkout</button>
+      <div class="cart-total-price">Total: &euro; {{total}} </div>
+      <button class="cart-checkout-button" type="button" routerLink="/checkout">Checkout</button>
     </div>
+  </ng-container>
+
+  <ng-container *ngIf="products.length == 0">
+        <div class="cart-checkout">
+          <button class="cart-checkout-button" type="button" routerLink="/">Go Shopping !</button>
+        </div>
+  </ng-container>

@@ -12,7 +12,7 @@ export class CartComponent implements OnInit {
   products : Product[] = [];
   
   private count : number = 0;
-  total : number = 0;
+  "total" : number;
   
   constructor(private cartService : CartService) { }
 
@@ -20,22 +20,14 @@ export class CartComponent implements OnInit {
     this.cartService.getProducts()
     .subscribe(products => {
       this.products = products;
-      this.total = this.cartService.getTotalPrice();
     })
-    // console.log(this.total + " asdsfdsfds");
-
-    // if (this.count == 0) {
-    //   console.log("Your cart is empty")
-    // } else { 
-    //   console.log(this.count)
-    // }
-    
-  }
-
-  calculateTotalPrice () {
     this.total == this.cartService.getTotalPrice();
-    console.log(this.total);
   }
+
+  // calculateTotalPrice () {
+  //   this.total == this.cartService.getTotalPrice();
+  //   console.log(this.total);
+  // }
 
 
 

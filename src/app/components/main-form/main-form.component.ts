@@ -19,6 +19,7 @@ export class MainFormComponent implements OnInit {
     this.products.forEach((p : any) => {
     Object.assign(p, {quantity:1, total: p.price});
     });
+    
   }
 
 }

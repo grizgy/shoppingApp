@@ -1,0 +1,69 @@
+<div class="container">
+    <form class="grid-form">
+    <!-- <p>Contact information</p> -->
+    <div class="form-group-1"> 
+    <div class="big">Contact information</div>
+        <div class="inside">
+            <div class="label1"> <label>Email</label></div>
+            <div class="input1"><input type="text" name="Email" required autocomplete="on"> </div>
+        </div>
+    </div>
+    <!-- <p>Shipping address</p> -->
+    <div class="form-group-2">
+    <div class="big">Shipping address</div>
+    <div class="inside" >
+        <div class="label1" ><label>Name</label></div>
+        <div class="input1"> <input type="text" name="Password" required autocomplete="on"> 
+        </div>
+        <div class="label2" ><label>Address</label></div>
+        <div class="input2"><input type="text" name="Password" required autocomplete="on">
+        </div>
+        <div class="label3" ><label>City</label></div>
+        <div class="input3"><input type="text" name="Password"required autocomplete="on">
+        </div>
+        <div class="label4"> <label>Country</label></div>
+        <div class="input4"><select id="country" name="country" type="text" name="Password" required autocomplete="on">
+              <option value="australia">Austria</option>
+              <option value="canada">Germany</option>
+              <option value="usa">Switzerland</option>
+        </select>
+        </div>
+        <div class="label5"> <label>Postal code</label></div>
+        <div class="input5"><input type="text" name="Password" required autocomplete="on">
+        </div>
+        <div class="label6"> <label>Phone (optional)</label></div>
+        <div class="input6"><input type="text" name="Password" autocomplete="on"> 
+        </div>
+        </div>
+    </div>
+    <!-- <p>Card details</p> -->
+    <div class="form-group-3">
+    <div class="big">Card details</div>
+    <div class="inside">
+        <div class="label1"> <label>Name on card</label></div>
+        <div class="input1"><input type="text" name="CName" required autocomplete="on">
+        </div>
+        <div class="label2"> <label>Card number </label></div>
+        <div class="input2"><input type="text" name="CNumber" required autocomplete="on">
+        </div>
+        <div class="label3"> <label>Expiration</label> </div>
+        <div class="input3"><input type="text" name="Expiration" placeholder="MM/YYYY"  required autocomplete="on">
+        </div>
+        <div class="label4"><label>CVC</label></div>
+        <div class="input4"><input type="text" name="CVC" required autocomplete="on">
+        </div>
+    </div>
+        </div>
+        <div class="costs">
+            <div class="costspos">
+            <div class="subtotal">Subtotal:€XXX.XX</div>
+            <div class="shippingcosts">Shipping costs:€XXX.XX</div>
+            <div class="totalcost big">Total:€XXX.XX</div>
+            </div>
+        </div>
+    <div class="butt">
+                <div id="back"><a routerLink="/cart" >⟻Back to chart</a></div>
+    <div id="pay"><button type="submit">Pay</button></div>
+    </div>
+    </form>
+</div>

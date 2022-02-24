@@ -18,12 +18,14 @@ import { SelectedItemComponent } from './components/selected-item/selected-item.
 import { CartComponent } from './components/cart/cart.component';
 import { CartItemComponent } from './components/cart-item/cart-item.component';
 import { QuantitySectionComponent } from './components/quantity-section/quantity-section.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 
 
 const appRoutes:Routes = [
   { path : '',  component: MainFormComponent } , 
   {path : 'configuration/:id',  component: SelectedItemComponent},
-  {path : 'cart',  component: CartComponent}
+  {path : 'cart',  component: CartComponent}, 
+  {path : 'checkout',  component: CheckoutComponent}
 ]
 
 @NgModule({
@@ -38,7 +40,8 @@ const appRoutes:Routes = [
     SelectedItemComponent,
     CartComponent,
     CartItemComponent,
-    QuantitySectionComponent
+    QuantitySectionComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule, 

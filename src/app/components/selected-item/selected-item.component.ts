@@ -12,7 +12,7 @@ import { CartService } from 'src/app/services/cart.service';
 export class SelectedItemComponent implements OnInit {
 
   "productToConfigure" : Product;
-  "inputNumber" : number = 123;
+  "quantityOfElement" : number = 1;
 
   constructor(private productService : ProductService, private route:ActivatedRoute, private cartService : CartService) { }
 
@@ -27,7 +27,8 @@ export class SelectedItemComponent implements OnInit {
   }
   
   receiveTotal( inputNumber : number) {
-    this.inputNumber = inputNumber;
+   this.productToConfigure.quantity = inputNumber;
+   this.quantityOfElement = inputNumber;
   }
 
 }

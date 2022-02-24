@@ -769,5 +769,12 @@
     }
     
 
-  
-    
+.site{
+  display: flex;
+  flex-direction: column;
+  height: 81vh;
+}
+
+.content{
+  flex: 1;
+}

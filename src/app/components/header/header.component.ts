@@ -9,6 +9,7 @@ import { CartService } from 'src/app/services/cart.service';
 export class HeaderComponent implements OnInit {
 
   public count : number = 0;
+  showCategory : boolean = false;
   constructor( private cartService : CartService) { }
 
   ngOnInit(): void {
