@@ -6,10 +6,12 @@
       </div>
           <label class="cart-desc">
               <button class="cart-desc-button" type="button" (click)="removeProduct(product)">&#215;</button>
+              <span class="cart-desc-name">{{product.size}}</span><br>
+              <span class="cart-desc-text">{{product.color}}</span><br>
               <span class="cart-desc-name">{{product.title}}</span><br>
               <span class="cart-desc-text">{{product.description}}</span><br>
               <app-quantity-section></app-quantity-section><br>
-              <span class="cart-desc-price">{{product.quantity}} times &euro; {{product.price}} equals {{product.quantity*product.price}}</span>
+              <span class="cart-desc-price"> {{product.quantity}} times &euro; {{product.price}} equals {{product.quantity*product.price}}</span>
           </label>
     </div>
  

@@ -11,5 +11,7 @@ export interface Product {
     category:categoryEnum  ;
     image:string;
     rating:number[];
+    size:string;
+    color:string;
     quantity:number;
 }

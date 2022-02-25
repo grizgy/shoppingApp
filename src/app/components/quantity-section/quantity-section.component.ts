@@ -13,6 +13,7 @@ export class QuantitySectionComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.eventEmmit.emit(this.inputNumber);
   }
 
 

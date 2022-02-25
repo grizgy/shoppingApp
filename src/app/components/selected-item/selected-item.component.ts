@@ -14,6 +14,21 @@ export class SelectedItemComponent implements OnInit {
   "productToConfigure" : Product;
   "quantityOfElement" : number = 1;
 
+  sizes : string []= [
+    'XS',
+    'S',
+    'M',
+    'L'
+  ];
+
+  colors : string []= [
+    'ivory',
+    'mint',
+    'wine',
+    'indigo',
+    'coal'
+  ];
+
   constructor(private productService : ProductService, private route:ActivatedRoute, private cartService : CartService) { }
 
   ngOnInit(): void {
@@ -30,5 +45,13 @@ export class SelectedItemComponent implements OnInit {
    this.productToConfigure.quantity = inputNumber;
    this.quantityOfElement = inputNumber;
   }
+
+  setColor(color:string) {
+    this.productToConfigure.color = color;
+  }
+
+  setSize(size:string) {
+    this.productToConfigure.size = size;
+    }
 
 }
