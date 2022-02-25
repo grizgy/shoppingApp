@@ -19,4 +19,7 @@ export class CartItemComponent implements OnInit {
     this.cartService.removeCartItem(product);
   }
 
+  getQuantity() : number {
+    return this.product.quantity;
+  }
 }

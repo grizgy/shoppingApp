@@ -16,11 +16,25 @@
 
      <form class="museum-label label-like" id="config-form">
 
+    <!-- <fieldset class="museum-fieldset" [class.has-error]="frameSize.touched && frameSize.invalid" >
+      <legend>Size</legend>
+      <div class="segmented">
+        <div *ngFor="let size of sizes" (click)="setSize(size)">
+          
+          <label for="frame-size-{{size}}"> <input type="radio" required #frameSize="ngModel"  id="frame-size-{{size}}" name="frameSize" value="{{size}}" [(ngModel)]="blue" > 
+               {{size}}<br>32”-33”</label>
+        </div>
+      </div>
+      <span class="help-block" *ngIf="frameSize.touched && frameSize.invalid" >Color is required</span>
+    </fieldset> -->
+    
+
+
     <fieldset class="museum-fieldset">
       <legend>Size</legend>
       <div class="segmented">
         <div *ngFor="let size of sizes" (click)="setSize(size)">
-          <input type="radio" id="frame-size-{{size}}" name="frameSize" value="{{size}}"> 
+          <input type="radio" id="frame-size-{{size}}" name="frameSize" value="{{size}}" required="required"> 
           <label for="frame-size-{{size}}">{{size}}<br>32”-33”</label>
         </div>
       </div>
@@ -38,15 +52,28 @@
 
 
 
-    <fieldset class="museum-fieldset summary-fieldset">
+    <fieldset *ngIf="productToConfigure.size != null && productToConfigure.color != null" class="museum-fieldset summary-fieldset">
       <legend>Summary and Submit</legend>
       <div class="form-text-row">
         <label>Price (excl. shipping)</label>
         <label class="sum">€{{productToConfigure.price}}</label>
       </div>
       <div class="form-text-row">
-        <app-quantity-section (eventEmmit)="receiveTotal($event)" ></app-quantity-section>
-        <label>Total Price:€{{quantityOfElement*productToConfigure.price}}</label> 
+        <app-quantity-section (eventEmmit)="receiveTotal($event)" [inputNumber]="quantityOfElement" ></app-quantity-section>
+        <label>Total Price:€{{productToConfigure.quantity*productToConfigure.price}}</label> 
+      </div>
+      <button type="submit" class="dropbtn" id="config-submit-button" (click)="addTocart(productToConfigure)" >Add to Cart</button>
+    </fieldset>
+
+    <fieldset *ngIf="productToConfigure.size == null || productToConfigure.color == null" disabled class="museum-fieldset summary-fieldset">
+      <legend>Summary and Submit</legend>
+      <div class="form-text-row">
+        <label>Price (excl. shipping)</label>
+        <label class="sum">€{{productToConfigure.price}}</label>
+      </div>
+      <div class="form-text-row">
+        <app-quantity-section (eventEmmit)="receiveTotal($event)" [inputNumber]="quantityOfElement" ></app-quantity-section>
+        <label>Total Price:€{{productToConfigure.quantity*productToConfigure.price}}</label> 
       </div>
       <button type="submit" class="dropbtn" id="config-submit-button" (click)="addTocart(productToConfigure)" >Add to Cart</button>
     </fieldset>
