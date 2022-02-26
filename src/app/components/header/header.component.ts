@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { CartService } from 'src/app/services/cart.service';
 export class HeaderComponent implements OnInit {
 
   public count : number = 0;
-  showCategory : boolean = true;
+  @Input() "routerHead" : string ;
   constructor( private cartService : CartService) { }
 
   ngOnInit(): void {

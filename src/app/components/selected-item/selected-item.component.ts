@@ -35,6 +35,7 @@ export class SelectedItemComponent implements OnInit {
   const routeParams = this.route.snapshot.paramMap;
   const productIdFromRoute = Number(routeParams.get('id'));
   this.productService.getProductById(productIdFromRoute).subscribe((prod) => this.productToConfigure = prod);
+  console.log(this.productToConfigure + " asdsdsadsad ")
   }
 
   addTocart(product : Product){

@@ -5,7 +5,7 @@
       </a>
     </div>
     <div class="header-right">
-      <app-dropdown *ngIf="showCategory" ></app-dropdown>
+      <app-dropdown *ngIf="routerHead == '/'" ></app-dropdown> 
       <a class="header-links" routerLink="/cart">Cart({{count}})</a>
     </div>
   </header>

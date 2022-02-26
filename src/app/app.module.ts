@@ -2,7 +2,7 @@ import { Component, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { Router, RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -22,7 +22,7 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 
 
 const appRoutes:Routes = [
-  { path : '',  component: MainFormComponent } , 
+  {path : '',  component: MainFormComponent} , 
   {path : 'configuration/:id',  component: SelectedItemComponent},
   {path : 'cart',  component: CartComponent}, 
   {path : 'checkout',  component: CheckoutComponent}
@@ -50,8 +50,9 @@ const appRoutes:Routes = [
     BrowserAnimationsModule,
     MatInputModule,
     MatSelectModule,
-    RouterModule.forRoot(appRoutes)
-    
+    // RouterModule.forRoot(appRoutes,
+    //   { enableTracing: true }) 
+    RouterModule.forRoot(appRoutes) 
   ],
   providers: [],
   bootstrap: [AppComponent]
