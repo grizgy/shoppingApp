@@ -68,10 +68,6 @@
     width: auto;
   }
   
-  /*--------*/
-  /* Search */
-  /*--------*/
-  
   input[type="search"] {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -211,9 +207,6 @@
     }
   }
   
-    /*---------------*/
-    /* Shopping Cart */
-    /*---------------*/
     .cart-body {
       font-family: var(--palReg);
       margin: 0;
@@ -422,9 +415,6 @@
       }
     }
   
-    /*--------------------*/
-    /* Frame Configurator */
-    /*--------------------*/
     .configurator {
       display: flex;
       justify-content: center;
@@ -639,9 +629,6 @@
       background-color: #333a3d;
     }
   
-    /*---------------*/
-    /* Form Elements */
-    /*---------------*/
     select {
       display: block;
       font-family: inherit;
@@ -684,11 +671,7 @@
       margin: 0;
     }
   
-    /*
-    Styling the range input element is very tricky.
-    If you want to know more, see
-    https://css-tricks.com/sliding-nightmare-understanding-range-input
-    */
+   
     input[type="range"] {
       -webkit-appearance: none;
       appearance: none;
@@ -757,10 +740,6 @@
       opacity: 1;
     }
   
-    /*---------------*/
-    /* Checkout Form */
-    /*---------------*/
-    /* this is a workaround for a Chrome bug that disallows display:grid on fieldset elements */
     .checkout-form div.grid {
       display: grid;
       grid-template-columns: 1fr 300px;
@@ -768,13 +747,3 @@
       align-items: center;
     }
     
-
-.site{
-  display: flex;
-  flex-direction: column;
-  height: 81vh;
-}
-
-.content{
-  flex: 1;
-}

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Product } from 'src/app/product';
 import { ProductService } from 'src/app/services/product.service';
 
@@ -10,6 +10,7 @@ import { ProductService } from 'src/app/services/product.service';
 export class MainFormComponent implements OnInit {
 
   products : Product[] = [];
+  @Input()"term" : string;
 
   constructor( private productService : ProductService) { }
 
@@ -22,4 +23,8 @@ export class MainFormComponent implements OnInit {
     
   }
 
+  receiveTerm( inputTerm : string) {
+    this.term = inputTerm;
+   }
+   
 }

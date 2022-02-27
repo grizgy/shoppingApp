@@ -1,5 +1,7 @@
-import { Component, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Product } from './product';
+import { ProductService } from './services/product.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +11,8 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'shoppingApp';
 
-  constructor(public routerApp: Router) {
-  }
+  constructor(public routerApp: Router) { }
 
+  ngOnInit(): void {
+    }
 }
