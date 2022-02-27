@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { ProductService } from 'src/app/services/product.service';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Product } from 'src/app/product';
 
 
@@ -11,17 +10,20 @@ import { Product } from 'src/app/product';
 export class SearchFormComponent implements OnInit {
 
   products : Product[] = [];
-
-  "search":string;
+  @Input()"term": string = "";
+  @Output() emmitSearchResult = new EventEmitter<string>();
   
-  constructor(private productService : ProductService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.productService.getProducts().subscribe((products) => this.products = products);
+    console.log(this.term)
+    this.emmitSearchResult.emit(this.term);
   }
 
-  onClick(text:string) {
-    this.productService.searchProductsByWord(text);
+  onKey(event: any) {
+    this.term = event.target.value;
+    console.log(this.term)
+    this.emmitSearchResult.emit(this.term);
   }
 
 }
