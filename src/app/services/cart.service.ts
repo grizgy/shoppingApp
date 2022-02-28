@@ -21,15 +21,11 @@ export class CartService {
       this.cartItemList.push(product);
       this.productList.next(this.cartItemList);
       console.log(this.cartItemList);
+    } else{
+      var ind = this.cartItemList.findIndex((t) => t.id == product.id);
+      this.cartItemList[ind] = product;
+      console.log(this.cartItemList[ind]);console.log(this.cartItemList);
     }
-  }
-
-  getTotalPrice (): number {
-    let total = 0;
-    this.cartItemList.map((p : any) => {
-      total += (p.price * p.quantity);
-    })
-    return total;
   }
 
   removeCartItem( product : Product) {
@@ -41,5 +37,13 @@ export class CartService {
     this.productList.next(this.cartItemList);
   }
 
+  
+  getTotalPrice (): number {
+    let total = 0;
+    this.cartItemList.map((p : any) => {
+      total += (p.price * p.quantity);
+    })
+    return total;
+  }
 
 }

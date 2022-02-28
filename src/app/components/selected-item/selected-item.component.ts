@@ -32,17 +32,17 @@ export class SelectedItemComponent implements OnInit {
   constructor(private productService : ProductService, private route:ActivatedRoute, private cartService : CartService) { }
 
   ngOnInit(): void {
-  const routeParams = this.route.snapshot.paramMap;
-  const productIdFromRoute = Number(routeParams.get('id'));
-  this.productService.getProductById(productIdFromRoute).subscribe((prod) => this.productToConfigure = prod);
-  console.log(this.productToConfigure + " asdsdsadsad ")
+    const routeParams = this.route.snapshot.paramMap;
+    const productIdFromRoute = Number(routeParams.get('id'));
+    this.productService.getProductById(productIdFromRoute).subscribe((prod) => this.productToConfigure = prod);
+    console.log(this.productToConfigure + " asdsdsadsad ")
   }
 
   addTocart(product : Product){
     this.cartService.addProduct(product);
   }
   
-  receiveTotal( inputNumber : number) {
+  setQuantity( inputNumber : number) {
    this.productToConfigure.quantity = inputNumber;
    this.quantityOfElement = inputNumber;
   }

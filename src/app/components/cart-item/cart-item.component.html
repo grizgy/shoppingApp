@@ -12,8 +12,7 @@
                 <span class="cart-desc-name">Size: {{product.size}}</span><br>
                 <span class="cart-desc-text">Color: {{product.color}}</span><br>
               </div>
-              <app-quantity-section [inputNumber]="getQuantity()"></app-quantity-section><br>  
-              <span class="cart-desc-price"> {{product.quantity}} X &euro; {{product.price}} equals {{product.quantity*product.price}}</span>
+              <app-quantity-section [inputNumber]="getQuantity()" (eventEmmit)="setQuantity($event)"></app-quantity-section><br>  
+              <span class="cart-desc-price"> {{product.quantity}} X &euro; {{product.price}} equals {{total}}</span>
           </label>
     </div>
- 

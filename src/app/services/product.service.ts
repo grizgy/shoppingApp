@@ -16,16 +16,19 @@ export class ProductService {
     return this.http.get<Product[]>(this.apiUrl);
   }
 
-  getProductById (product:number): Observable<Product>  { 
-     return this.http.get<Product>(`${this.apiUrl}/${product}`);
-     }
+  getProductById (id:number): Observable<Product>  { 
+     return this.http.get<Product>(`${this.apiUrl}/${id}`);
+  }
 
-
-  // searchProductsByWord (text:string) : Observable<Product[]> { 
-
-  //   console.log(`${this.apiUrl}/?id=${text}`);
-  //   return this.http.get<Product[]>(`${this.apiUrl}/?id=${text}`).pipe();
-
+  // updateProduct (product : Product) : Observable<void> { 
+    
+  //    return this.http.put<void>(`${this.apiUrl}/${product.id}`,product, {
+  //      headers : new HttpHeaders({
+  //       'Content-Type' : 'application/json'
+  //      })
+  //    } 
+  //    );
+   
   // }
 
   searchProductsByWord (text:string) : Observable<Product[]> {
@@ -39,11 +42,5 @@ export class ProductService {
      return this.http.get<Product[]>(`${this.apiUrl}/?category=${text}`);
 
   }
-
-  // findProductsByCategory (category:string) : Observable<Product[]> { 
-  //   // return this.http.get<Product[]>(this.apiUrl);
-  //   return this.http.get<Product[]>(`${this.apiUrl}/?category=${category}`);
-  // }
-  
 
 }

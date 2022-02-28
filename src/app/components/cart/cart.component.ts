@@ -11,7 +11,8 @@ export class CartComponent implements OnInit {
 
   public products : Product[] = [];
   
-  public "total" !: number;
+  // public "total" !: number;
+  total : number = 0;
   
   constructor(private cartService : CartService) { }
 
@@ -20,7 +21,12 @@ export class CartComponent implements OnInit {
     .subscribe(products => {
       this.products = products;
       this.total = this.cartService.getTotalPrice();
+
     })   
   }
+
+  setGrandTotal(totalOfAllElement : number) {
+    this.total += totalOfAllElement;
+   }
 
 }

@@ -1,5 +1,5 @@
 <ng-container *ngIf="products.length !=0">
-<app-cart-item *ngFor = "let product of products; let i = index" [product]="product" ></app-cart-item>
+<app-cart-item *ngFor = "let product of products" [product]="product" (emitGrandTotal)="setGrandTotal($event)" ></app-cart-item>
     <div class="cart-checkout">
       <div class="cart-total-price">Total: &euro; {{total}} </div>
       <button class="cart-checkout-button" type="button" routerLink="/checkout">Checkout</button>
