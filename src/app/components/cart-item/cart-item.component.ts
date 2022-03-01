@@ -17,7 +17,6 @@ export class CartItemComponent implements OnInit {
   constructor(private cartService : CartService, private productService : ProductService) { }
 
   ngOnInit(): void {
-    // this.emitGrandTotal.emit(this.product.quantity * this.product.price);
   }
 
   removeProduct(product : Product){
@@ -32,7 +31,7 @@ export class CartItemComponent implements OnInit {
   setQuantity( inputNumber : number) {
     this.product.quantity = inputNumber;
     this.total = this.product.quantity * this.product.price;
-    //  this.emitGrandTotal.emit(inputNumber * this.product.price);
+    this.emitGrandTotal.emit(this.product.quantity);
    }
 
 }
