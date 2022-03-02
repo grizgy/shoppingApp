@@ -1,7 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Product } from './product';
-import { ProductService } from './services/product.service';
 
 @Component({
   selector: 'app-root',
@@ -10,9 +8,15 @@ import { ProductService } from './services/product.service';
 })
 export class AppComponent {
   title = 'shoppingApp';
+  "text" : string = "";
 
   constructor(public routerApp: Router) { }
 
   ngOnInit(): void {
+    }
+
+    thisIsText(text : string) {
+      console.log(text + " APPPP")
+      this.text = text;
     }
 }

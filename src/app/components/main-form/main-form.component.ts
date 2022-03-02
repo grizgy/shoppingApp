@@ -10,7 +10,7 @@ import { ProductService } from 'src/app/services/product.service';
 export class MainFormComponent implements OnInit {
 
   products : Product[] = [];
-  @Input()"term" : string;
+  @Input() "term" : string;
 
   constructor( private productService : ProductService) { }
 

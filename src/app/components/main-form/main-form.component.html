@@ -1,4 +1,4 @@
-<app-search-form (emmitSearchResult)="receiveTerm($event)"  ></app-search-form>
+<app-search-form (emmitSearchResult)="receiveTerm($event)" ></app-search-form>
 <div class="container">
 <app-item *ngFor = "let product of products | filter:term" [product]="product" ></app-item>
 </div>
