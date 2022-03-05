@@ -8,15 +8,10 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'shoppingApp';
-  "text" : string = "";
 
   constructor(public routerApp: Router) { }
 
   ngOnInit(): void {
     }
 
-    thisIsText(text : string) {
-      console.log(text + " APPPP")
-      this.text = text;
-    }
 }
