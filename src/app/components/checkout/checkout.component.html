@@ -4,66 +4,56 @@
     <div class="form-group-1"> 
     <div class="big">Contact information</div>
         <div class="inside">
-            <div class="label1"> <label>Email</label></div>
-            <div class="input1"><input type="text" name="Email" required autocomplete="on"> </div>
+             <label for="Email">Email</label>
+            <input type="text" name="Email" required autocomplete="on" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"> 
         </div>
     </div>
     <!-- <p>Shipping address</p> -->
     <div class="form-group-2">
     <div class="big">Shipping address</div>
     <div class="inside" >
-        <div class="label1" ><label>Name</label></div>
-        <div class="input1"> <input type="text" name="Password" required autocomplete="on"> 
-        </div>
-        <div class="label2" ><label>Address</label></div>
-        <div class="input2"><input type="text" name="Password" required autocomplete="on">
-        </div>
-        <div class="label3" ><label>City</label></div>
-        <div class="input3"><input type="text" name="Password"required autocomplete="on">
-        </div>
-        <div class="label4"> <label>Country</label></div>
-        <div class="input4"><select id="country" name="country" type="text" name="Password" required autocomplete="on">
+        <label>Name</label>
+        <input type="text" name="Password" required autocomplete="on"> 
+        <label>Address</label>
+        <input type="text" name="Password" required autocomplete="on">
+        <label>City</label>
+        <input type="text" name="Password"required autocomplete="on">
+       <label>Country</label>
+        <select id="country" name="country" type="text" name="Password" required autocomplete="on">
               <option value="australia">Austria</option>
               <option value="canada">Germany</option>
               <option value="usa">Switzerland</option>
         </select>
-        </div>
-        <div class="label5"> <label>Postal code</label></div>
-        <div class="input5"><input type="text" name="Password" required autocomplete="on">
-        </div>
-        <div class="label6"> <label>Phone (optional)</label></div>
-        <div class="input6"><input type="text" name="Password" autocomplete="on"> 
-        </div>
-        </div>
+        <label>Postal code</label>
+        <input type="text" name="Password" required autocomplete="on">
+        <label>Phone (optional)</label>
+        <input type="text" name="Password" autocomplete="on"> 
+    </div>
     </div>
     <!-- <p>Card details</p> -->
     <div class="form-group-3">
     <div class="big">Card details</div>
     <div class="inside">
-        <div class="label1"> <label>Name on card</label></div>
-        <div class="input1"><input type="text" name="CName" required autocomplete="on">
-        </div>
-        <div class="label2"> <label>Card number </label></div>
-        <div class="input2"><input type="text" name="CNumber" required autocomplete="on">
-        </div>
-        <div class="label3"> <label>Expiration</label> </div>
-        <div class="input3"><input type="text" name="Expiration" placeholder="MM/YYYY"  required autocomplete="on">
-        </div>
-        <div class="label4"><label>CVC</label></div>
-        <div class="input4"><input type="text" name="CVC" required autocomplete="on">
-        </div>
+        <label>Name on card</label>
+        <input type="text" name="CName" required autocomplete="on">
+        <label>Card number </label>
+        <input type="text" name="CNumber" required autocomplete="on">
+        <label>Expiration</label>
+        <input type="text" name="Expiration" placeholder="MM/YYYY"  required autocomplete="on">
+        <label>CVC</label>
+        <input type="text" name="CVC" required autocomplete="on">
     </div>
         </div>
-        <div class="costs">
-            <div class="costspos">
-            <div class="subtotal">Subtotal:€{{total}}</div>
-            <div class="shippingcosts">Shipping costs:€{{shippingCosts}}</div>
-            <div class="totalcost big">Total:€ {{total + shippingCosts}}</div>
-            </div>
+    <div class="costs">
+        <div class="costspos">
+        <div class="subtotal">Subtotal:€{{total}}</div>
+        <div class="shippingcosts">Shipping costs:€{{shippingCosts}}</div>
+        <div class="totalcost big">Total:€ {{total + shippingCosts}}</div>
         </div>
+    </div>
     <div class="butt">
                 <div id="back"><a routerLink="/cart" >⟻Back to chart</a></div>
-    <div id="pay"><button type="submit">Pay</button></div>
+                <div id="pay"><button type="submit">Pay</button></div>
     </div>
     </form>
 </div>

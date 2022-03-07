@@ -13,14 +13,15 @@ export class MainFormComponent implements OnInit {
 
   products : Product[] = [];
   @Input() "term" : string;
+  @Input()"category" : string;
 
   "subscription" : Subscription;
 
   constructor( private productService : ProductService, private appsevice: AppService) { }
 
   ngOnInit(): void {
+    this.subscription = this.appsevice.currentMessage.subscribe(message => this.category = message) 
     this.productService.getProducts().subscribe((products) => this.products = products);  
-    this.subscription = this.appsevice.currentMessage.subscribe(message => this.term = message)  
   }
 
   ngOnDestroy() {

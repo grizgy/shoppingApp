@@ -27,10 +27,6 @@
     opacity: 0.9;
   }
 
-  .cart-checkout-button:active {
-    height: 2.375em;
-  }
-
   .cart-checkout-button {
     padding-left: 1em;
     padding-right: 1em;
