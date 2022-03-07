@@ -9,7 +9,7 @@ import { CartService } from 'src/app/services/cart.service';
 export class CheckoutComponent implements OnInit {
 
   public "total" !: number;
-  shippingCosts: number = 15.00;
+  shippingCosts: number = 15;
   constructor(private cartService : CartService) { }
 
   ngOnInit(): void {

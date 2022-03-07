@@ -40,11 +40,11 @@
       <legend>Summary and Submit</legend>
       <div class="form-text-row">
         <label>Price (excl. shipping)</label>
-        <label class="sum">€{{productToConfigure.price}}</label>
+        <label class="sum">€{{productToConfigure.price.toFixed(2)}}</label>
       </div>
       <div class="form-text-row">
         <app-quantity-section (eventEmmit)="setQuantity($event)" [inputNumber]="quantityOfElement" ></app-quantity-section>
-        <label>Total Price:€{{productToConfigure.quantity*productToConfigure.price}}</label> 
+        <label>Total Price:€{{(productToConfigure.quantity*productToConfigure.price).toFixed(2)}}</label> 
       </div>
       <button type="submit" class="dropbtn" id="config-submit-button" (click)="addTocart(productToConfigure)" >Add to Cart</button>
     </fieldset>
@@ -53,11 +53,11 @@
       <legend>Summary and Submit</legend>
       <div class="form-text-row">
         <label>Price (excl. shipping)</label>
-        <label class="sum">€{{productToConfigure.price}}</label>
+        <label class="sum">€{{productToConfigure.price.toFixed(2)}}</label>
       </div>
       <div class="form-text-row">
         <app-quantity-section (eventEmmit)="setQuantity($event)" [inputNumber]="quantityOfElement" ></app-quantity-section>
-        <label>Total Price:€{{productToConfigure.quantity*productToConfigure.price}}</label> 
+        <label>Total Price:€{{(productToConfigure.quantity*productToConfigure.price).toFixed(2)}}</label> 
       </div>
       <button type="submit" class="dropbtn" id="config-submit-button" (click)="addTocart(productToConfigure)" >Add to Cart</button>
     </fieldset>
