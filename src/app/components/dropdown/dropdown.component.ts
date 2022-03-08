@@ -21,10 +21,6 @@ export class DropdownComponent implements OnInit {
 
   ngOnInit(){
   }
-
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
-  }
   
   onClick(str:string) {
     this.appsevice.changeMessage(str)

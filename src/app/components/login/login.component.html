@@ -1,0 +1,18 @@
+<div fxLayoutAlign="center center" fxFlexFill class="main-div">
+    <mat-card fxFlex="25">
+        <mat-toolbar>SIGN IN</mat-toolbar>
+        <form fxLayoutAlign="stretch" fxLayout="column" class="login-form">
+            <mat-form-field>
+              <mat-label></mat-label>
+              <input matInput placeholder="Account email" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+            </mat-form-field>
+          
+            <mat-form-field>
+                <mat-label></mat-label>
+                <input matInput type="password" placeholder="Password" required>
+              </mat-form-field>
+              <button mat-button-raised type="submit">Login</button>
+              <span>Don't have a account? <a routerLink="/">Sign Up</a></span>
+          </form>
+    </mat-card>
+</div>

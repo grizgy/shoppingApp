@@ -1,7 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Product } from 'src/app/product';
 import { CartService } from 'src/app/services/cart.service';
-import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-cart-item',
@@ -14,9 +13,16 @@ export class CartItemComponent implements OnInit {
   @Output()total : number = 0;
   @Output() emitGrandTotal = new EventEmitter<number>();
 
-  constructor(private cartService : CartService, private productService : ProductService) { }
+  constructor(private cartService : CartService) { }
 
   ngOnInit(): void {
+  }
+
+  askForConfirmation(product : Product) {
+    var userVal = confirm("Do you want to remove " + product.title + "?")
+    if (userVal == true) {
+      this.removeProduct(product)
+    }
   }
 
   removeProduct(product : Product){
@@ -26,6 +32,7 @@ export class CartItemComponent implements OnInit {
 
   getQuantity() : number {
     return this.product.quantity;
+    
   }
 
   setQuantity( inputNumber : number) {

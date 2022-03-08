@@ -80,3 +80,9 @@
     display: inline;
     align-items: left;
   }
+
+  @media only screen and (max-width: 414px) {
+    .cart-preview {
+    clip-path: circle();
+    }  
+  }

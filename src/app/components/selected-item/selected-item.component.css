@@ -41,13 +41,6 @@
   }
 
   .configurator {
-    /* max-width: 800px;
-    margin: 30px auto;
-    overflow: auto;
-    min-height: 300px;
-    border: 1px solid steelblue;
-    padding: 30px;
-    border-radius: 5px; */
     display: flex;
     justify-content: center;
     margin-bottom: 4rem;
@@ -86,14 +79,6 @@
       flex-direction: column;
       justify-content: center;
       margin: 0 10px 0 10px;
-    }
-  
-    .mat-color-item:first-of-type {
-      padding-left: 20px;
-    }
-  
-    .mat-color-item:last-of-type {
-      padding-right: 20px;
     }
 
     .mat-color-item input {
@@ -202,6 +187,15 @@
       padding: 1em;
       font-size: 0.9rem;
       font-family: var(--pal);
+    }
+
+    @media only screen and (max-width: 414px) {
+      .configurator {
+        display: grid;
+        justify-content: center;
+        margin-bottom: 4rem;
+      }   
+
     }
 
     
