@@ -1,0 +1,13 @@
+.main-div mat-card{
+    padding:0px;
+}
+
+.login-form{
+    padding: 20px;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(124, 80, 246);
+    font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}

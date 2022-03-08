@@ -26,6 +26,7 @@ import { CartItemComponent } from './components/cart-item/cart-item.component';
 import { QuantitySectionComponent } from './components/quantity-section/quantity-section.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 
 const appRoutes:Routes = [
@@ -33,7 +34,8 @@ const appRoutes:Routes = [
   {path : 'configuration/:id',  component: SelectedItemComponent},
   {path : 'cart',  component: CartComponent}, 
   {path : 'checkout',  component: CheckoutComponent}, 
-  {path : 'login',  component: LoginComponent}
+  {path : 'login',  component: LoginComponent}, 
+  {path : 'register',  component: RegisterComponent}
 ]
 
 @NgModule({
@@ -50,7 +52,8 @@ const appRoutes:Routes = [
     CartItemComponent,
     QuantitySectionComponent,
     CheckoutComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule, 

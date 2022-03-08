@@ -14,4 +14,11 @@ export class AppComponent {
   ngOnInit(): void {
     }
 
+    headerIsVisible() : boolean {
+      if(this.routerApp.url == '/login' || this.routerApp.url ==  '/register') {
+        return false;
+      }
+      return true;
+    }
+
 }

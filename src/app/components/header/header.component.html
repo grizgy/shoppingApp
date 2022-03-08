@@ -4,7 +4,7 @@
         <img class="logo" src="https://t4.ftcdn.net/jpg/03/34/53/51/360_F_334535136_vvbWaKEpsHIMS4dpJUxgXZL6clQX7VGs.jpg" alt="Visit main search page" >
       </a>
     </div>
-    <div class="header-right">
+    <div class="header-right" *ngIf="headerIsVisible()">
       <app-dropdown *ngIf="routerHead == '/'" ></app-dropdown> 
       <a class="header-links" routerLink="/cart">Cart({{count}})</a>
     </div>
