@@ -4,39 +4,77 @@
         <form fxLayoutAlign="stretch" fxLayout="column" class="login-form">
 
 
-            <mat-form-field>
+            <!-- <mat-form-field>
                 <mat-label></mat-label>
-                <input matInput type="password" placeholder="First Name" required>
+                <input matInput type="text" placeholder="First Name" required>
+                <mat-hint style="color:red;" *ngIf="profileForm.get('firstName').touched &&  profileForm.get('firstName').errors?.required">
+                    First Name is required
+                </mat-hint>
             </mat-form-field>
 
             <mat-form-field>
                 <mat-label></mat-label>
-                <input matInput type="password" placeholder="Last Name" required>
+                <input matInput type="text" placeholder="Last Name" required>
+                <mat-hint style="color:red;" *ngIf="profileForm.get('familyName').touched &&  profileForm.get('familyName').errors?.required">
+                    Last Name is required
+                </mat-hint>
             </mat-form-field>
 
 
             <mat-form-field>
                 <mat-label></mat-label>
-                <input matInput placeholder="Username" required>
-            </mat-form-field>
+                <input matInput type="text" placeholder="Username" required>
+                <mat-hint style="color:red;" *ngIf="profileForm.get('username').touched &&  profileForm.get('username').errors?.required">
+                    Username is required
+                </mat-hint>
+            </mat-form-field> -->
 
 
             <mat-form-field>
-              <mat-label></mat-label>
-              <input matInput placeholder="Account email" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+              <mat-label>Account email</mat-label>
+              <input type="email" name="email" [(ngModel)]="registerUserData.email" 
+              matInput required pattern = "^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" #emailInput="ngModel">
+              <div *ngIf="emailInput.invalid && (emailInput.dirty || emailInput.touched)"
+                class="alert">
+
+                <div *ngIf="emailInput.errors?.['required']">
+                    Email is required.
+                </div>
+
+            </div>
+
+
+              <!-- <mat-hint style="color:red;" *ngIf="profileForm.get('email').touched &&  profileForm.get('email').errors?.required">
+            </mat-hint> -->
             </mat-form-field>
           
             <mat-form-field>
-                <mat-label></mat-label>
-                <input matInput type="password" placeholder="Password" required>
+                <mat-label>Password</mat-label>
+                <input  type="password" [(ngModel)]="registerUserData.pass" 
+                name="pass" matInput required #passInput="ngModel" >
+                
+            <div *ngIf="passInput.invalid && (passInput.dirty || passInput.touched)" class="alert">
+
+                <div *ngIf="passInput.errors?.['required']">
+                    Pass is required.
+                </div>
+
+            </div>
+
+                <!-- <mat-hint style="color:red;" *ngIf="profileForm.get('pass').touched &&  profileForm.get('pass').errors?.required">
+                    Pass is required
+                </mat-hint> -->
             </mat-form-field>
 
-            <mat-form-field>
+            <!-- <mat-form-field>
                 <mat-label></mat-label>
                 <input matInput type="password" placeholder="Confirm password" required>
-            </mat-form-field>
+                <mat-hint style="color:red;" *ngIf="profileForm.get('pass').touched &&  profileForm.get('pass').errors?.required">
+                    Pass is required
+                </mat-hint>
+            </mat-form-field> -->
 
-            <button mat-button-raised type="submit">Login</button>
+            <button [disabled]="(emailInput.errors?.['pattern'] || passInput.errors?.['required'] )" mat-button-raised type="submit" (click)="registerUser()" >Register</button>
             <span>Already have an account? <a routerLink="/login">Sign In</a></span>
           </form>
     </mat-card>

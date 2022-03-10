@@ -19,11 +19,11 @@
       <div class="segmented">
         <div *ngFor="let size of sizes" (click)="setSize(size)">
           <input type="radio" id="frame-size-{{size}}" name="frameSize" value="{{size}}" required="required"> 
-          <label for="frame-size-{{size}}">{{size}}<br>32”-33”</label>
+          <label for="frame-size-{{size}}">{{size}}</label>
         </div>
       </div>
     </fieldset>
-    
+
     <fieldset class="museum-fieldset">
       <legend>Mat Color</legend>
       <div class="mat-color-row">
