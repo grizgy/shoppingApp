@@ -1,4 +1,4 @@
-<app-header  [routerHead]="routerApp.url" ></app-header>
+<app-header  [routerHead]="routerApp.url" *ngIf="headerIsVisible"></app-header>
 <router-outlet></router-outlet>
 <app-footer></app-footer>
 

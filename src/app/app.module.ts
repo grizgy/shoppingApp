@@ -12,6 +12,9 @@ import {MatSelectModule,} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatRadioModule} from '@angular/material/radio';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -65,16 +68,16 @@ const appRoutes:Routes = [
     // RouterModule.forRoot(appRoutes,
     //   { enableTracing: true }) 
     RouterModule.forRoot(appRoutes) ,
-    BrowserModule,
     HttpClientModule,
-    FormsModule,
     Ng2SearchPipeModule,
     FlexLayoutModule,
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
     MatCardModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatRadioModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
