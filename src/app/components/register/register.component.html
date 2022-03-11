@@ -50,7 +50,7 @@
           
             <mat-form-field>
                 <mat-label>Password</mat-label>
-                <input  type="password" [(ngModel)]="registerUserData.pass" 
+                <input  type="password" [(ngModel)]="registerUserData.password" 
                 name="pass" matInput required #passInput="ngModel" >
                 
             <div *ngIf="passInput.invalid && (passInput.dirty || passInput.touched)" class="alert">

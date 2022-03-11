@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../user';
-import { BehaviorSubject } from 'rxjs';
 import { Router } from '@angular/router'
 
 @Injectable({
@@ -11,14 +10,24 @@ export class UserService {
 
   private userApiUrl = 'http://localhost:5000/users'
   private loginUrl = 'http://localhost:5000/login'
-  public productList = new BehaviorSubject<any>([]);
-  public userList : User[] = []
 
   constructor(private http: HttpClient, private router: Router) { }
   
   addUser(user : any) {
 
-    return this.http.post<User>(this.userApiUrl, user)
+    
+   
+      return this.http.post<User>(this.userApiUrl, user) .subscribe(
+        res => {
+          // localStorage.setItem('token', res.token)
+          console.log(res)
+          // this.router.navigate(['/'])
+        },
+        err => console.log(err)
+      )  
+    
+
+    
 
     // if( !this.userList.find((t) =>t.email === user.email )) {
     //   this.userList.push(user);

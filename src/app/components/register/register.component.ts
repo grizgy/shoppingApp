@@ -31,14 +31,15 @@ export class RegisterComponent implements OnInit {
 
   registerUser() {
 
-      this.userService.addUser(this.registerUserData).subscribe(
-        res => {
-          // localStorage.setItem('token', res.token)
-          console.log(res)
-          // this.router.navigate(['/'])
-        },
-        err => console.log(err)
-      )      
+      this.userService.addUser(this.registerUserData)
+      // .subscribe(
+      //   res => {
+      //     // localStorage.setItem('token', res.token)
+      //     console.log(res)
+      //     // this.router.navigate(['/'])
+      //   },
+      //   err => console.log(err)
+      // )      
       // return this.userService.addUser(user);
 
   }
@@ -47,11 +48,11 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
     this.registerForm = new FormGroup({
-       name: new FormControl(this.registerUserData.name, [
+      email: new FormControl(this.registerUserData.email, Validators.required),
+      password: new FormControl(this.registerUserData.password, [
         Validators.required,
         Validators.minLength(4)
-      ]),
-      email: new FormControl(this.registerUserData.email, Validators.required)
+      ])
     }); 
   }
 
