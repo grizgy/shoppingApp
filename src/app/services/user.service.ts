@@ -14,33 +14,29 @@ export class UserService {
   constructor(private http: HttpClient, private router: Router) { }
   
   addUser(user : any) {
-
-    
-   
-      return this.http.post<User>(this.userApiUrl, user) .subscribe(
+      return this.http.post<User>(this.userApiUrl, user).subscribe(
         res => {
-          // localStorage.setItem('token', res.token)
+          localStorage.setItem('registerToken', res.email)
           console.log(res)
-          // this.router.navigate(['/'])
+          this.router.navigate(['/'])
         },
         err => console.log(err)
       )  
-    
-
-    
-
-    // if( !this.userList.find((t) =>t.email === user.email )) {
-    //   this.userList.push(user);
-    //   this.productList.next(this.userList);
-    //   console.log(this.userList);
-    // } else{
-    //   console.log("Sorry, there is already an account with this email " + user.email)
-    // }
 
   }
   
   loginUser(user: any) {
+
     return this.http.post<any>(this.loginUrl, user)
+    .subscribe(
+      res => {
+        localStorage.setItem('loginToken', res.email)
+        console.log(res)
+        // this.router.navigate(['/'])
+      },
+      err => console.log(err)
+    )  
+    
   }
 
   logoutUser() {

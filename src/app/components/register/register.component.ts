@@ -13,46 +13,24 @@ export class RegisterComponent implements OnInit {
 
   constructor(private userService: UserService, private router: Router) { }
 
-  "registerUserData" : any = {}
-
-  // registerForm = new FormGroup(
-  //   {
-  //   email: new FormControl(', Validators.required, Validators.pattern("^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$")'), 
-  //   // ['', Validators.required, Validators.pattern("^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$")],
-  //   // userName:['', Validators.required],
-  //   password: new FormControl ('', Validators.required)
-  //   // ['', Validators.required],
-  //   // firstName:['', Validators.required],
-  //   // familyName:['', Validators.required],
-  //   }
-  // );
-  
- 
-
   registerUser() {
-
-      this.userService.addUser(this.registerUserData)
-      // .subscribe(
-      //   res => {
-      //     // localStorage.setItem('token', res.token)
-      //     console.log(res)
-      //     // this.router.navigate(['/'])
-      //   },
-      //   err => console.log(err)
-      // )      
-      // return this.userService.addUser(user);
-
+      this.userService.addUser(this.registerForm.value)
   }
 
    registerForm!: FormGroup;
 
   ngOnInit(): void {
     this.registerForm = new FormGroup({
-      email: new FormControl(this.registerUserData.email, Validators.required),
-      password: new FormControl(this.registerUserData.password, [
+      id: new FormControl(''),
+      email: new FormControl('', Validators.required),
+      username: new FormControl('', Validators.required),
+      password: new FormControl('', [
         Validators.required,
         Validators.minLength(4)
-      ])
+      ]),
+      firstname: new FormControl('', Validators.required),
+      lastname: new FormControl('', Validators.required),
+      phone: new FormControl('', Validators.required)
     }); 
   }
 

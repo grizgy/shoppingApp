@@ -1,17 +1,18 @@
 <div fxLayoutAlign="center center" fxFlexFill class="main-div">
     <mat-card fxFlex="25">
         <mat-toolbar>SIGN IN</mat-toolbar>
-        <form fxLayoutAlign="stretch" fxLayout="column" class="login-form">
-            <mat-form-field>
-              <mat-label>Account email</mat-label>
-              <input type="email" [(ngModel)]="loginUserData.email"  name="email"  matInput required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" #emailInput="ngModel">
-            </mat-form-field>
-          
-            <mat-form-field>
-                <mat-label>Password</mat-label>
-                <input type="password" [(ngModel)]="loginUserData.password" name="pass"  matInput type="password" required #passInput="ngModel">
-              </mat-form-field>
-              <button [disabled]="(emailInput.errors?.['pattern'] || passInput.errors?.['required'] )" mat-button-raised type="submit" (click)="loginUser()">Login</button>
+        <form [formGroup]="loginForm" fxLayoutAlign="stretch" fxLayout="column" class="login-form">
+          <mat-form-field>
+            <mat-label>Account email</mat-label>
+            <input type="email" id="email" name="email" formControlName="email"
+            matInput required pattern = "^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" >
+          </mat-form-field>
+        
+          <mat-form-field>
+              <mat-label>Password</mat-label>
+              <input  type="password" id="password" name="password" formControlName="password" matInput required >
+          </mat-form-field>
+              <button [disabled]="!loginForm.valid" mat-button-raised type="submit" (click)="loginUser()">Login</button>
               <span>Don't have an account? <a routerLink="/register">Sign Up</a></span>
           </form>
     </mat-card>

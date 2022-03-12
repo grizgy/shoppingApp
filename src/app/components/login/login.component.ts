@@ -11,16 +11,14 @@ import { Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  "loginUserData" : any = {};
-
   constructor(private userService: UserService, private router: Router) { }
 
   loginForm!: FormGroup;
 
   ngOnInit(): void {
     this.loginForm = new FormGroup({
-      email: new FormControl(this.loginUserData.email, Validators.required),
-      password: new FormControl(this.loginUserData.password, [
+      email: new FormControl('', Validators.required),
+      password: new FormControl('', [
         Validators.required,
         Validators.minLength(4)
       ])
@@ -28,14 +26,7 @@ export class LoginComponent implements OnInit {
   }
 
   loginUser () {
-    this.userService.loginUser(this.loginUserData)
-    .subscribe(
-      res => {
-        localStorage.setItem('token', res.token)
-        // this.router.navigate(['/'])
-      },
-      err => console.log(err)
-    ) 
+    this.userService.loginUser(this.loginForm.value)
   }
 
 }
