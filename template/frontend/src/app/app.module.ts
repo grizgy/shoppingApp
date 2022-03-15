@@ -14,6 +14,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatRadioModule} from '@angular/material/radio';
 import { ReactiveFormsModule } from '@angular/forms';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 import { AppComponent } from './app.component';
@@ -77,7 +78,8 @@ const appRoutes:Routes = [
     MatCardModule,
     MatToolbarModule,
     MatRadioModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

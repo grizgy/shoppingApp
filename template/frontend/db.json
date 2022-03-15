@@ -331,42 +331,7 @@
       "firstname": "jimmie",
       "lastname": "klein",
       "phone": "1-104-001-4567"
-    },
-    {
-      "id": 11,
-      "email": "jimmie@gmail.com",
-      "username": "Kris",
-      "password": "asdasd",
-      "firstname": "asdasd",
-      "lastname": "asdsad",
-      "phone": "0123456789"
     }
   ],
-  "login": [
-    {
-      "email": "kristian_hristov@outlook.com",
-      "password": "asdasd",
-      "id": 1
-    },
-    {
-      "email": "kristian_hristov@outlook.com",
-      "password": "asdasd",
-      "id": 2
-    },
-    {
-      "email": "kristian_hristov@outlook.com",
-      "password": "sadsda",
-      "id": 3
-    },
-    {
-      "email": "jimmie@gmail.com",
-      "password": "ASAssdsa",
-      "id": 4
-    },
-    {
-      "email": "kristian_hristov@outlook.com",
-      "password": "asddsa",
-      "id": 5
-    }
-  ]
+  "login": []
 }
