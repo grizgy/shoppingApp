@@ -1,14 +1,9 @@
-export enum categoryEnum{
-    "jewelery", "electronics", "men's clothing", "women's clothing"
-}
-
-
 export interface Product {
     id:number;
     title:string;
     price:number;
     description:string;
-    category:categoryEnum  ;
+    category:string  ;
     image:string;
     rating:number[];
     size:string;

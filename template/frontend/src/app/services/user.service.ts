@@ -4,6 +4,7 @@ import { User } from '../user';
 import { Router } from '@angular/router'
 import { tap } from 'rxjs/operators';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import {FormGroup} from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +21,8 @@ export class UserService {
         duration:5000, horizontalPosition:'right', verticalPosition:'top'
       })) ).subscribe(
         res => {
-          localStorage.setItem('registerToken: ', res.email)
+          localStorage.setItem('registerEmailToken:', res.email)
+          localStorage.setItem('registerPassToken:' , res.password)
           console.log(res)
           // this.router.navigate(['/'])
         },
@@ -36,7 +38,8 @@ export class UserService {
     })) )
     .subscribe(
       res => {
-        localStorage.setItem('loginToken: ' , res.email)
+        localStorage.setItem('loginEmailToken:' , res.email)
+        localStorage.setItem('loginPassToken:' , res.password)
         console.log(res)
         // this.router.navigate(['/'])
       },
@@ -46,16 +49,17 @@ export class UserService {
   }
 
   logoutUser() {
-    localStorage.removeItem('token')
+    localStorage.removeItem('loginEmailToken:')
+    localStorage.removeItem('loginPassToken:')
     this.router.navigate(['/'])
   }
 
   getToken() {
-    return localStorage.getItem('token')
+    return localStorage.getItem('loginEmailToken:')
   }
 
   loggedIn() {
-    return !!localStorage.getItem('token')    
+    return !!localStorage.getItem('loginEmailToken:')    
   }
 
 }

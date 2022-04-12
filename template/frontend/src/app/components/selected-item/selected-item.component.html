@@ -12,7 +12,7 @@
       </div>
     </div>
 
-     <form class="museum-label label-like" id="config-form">
+     <form class="museum-label label-like" id="config-form"  *ngIf="productToConfigure.category != 'electronics' && productToConfigure.category != 'jewelery'">
 
     <fieldset class="museum-fieldset">
       <legend>Size</legend>
@@ -63,4 +63,23 @@
     </fieldset>
 
   </form>
+
+
+  <form class="museum-label label-like" id="config-form"  *ngIf="productToConfigure.category == 'electronics' || productToConfigure.category == 'jewelery' ">
+
+    <fieldset class="museum-fieldset summary-fieldset">
+      <legend>Summary and Submit</legend>
+      <div class="form-text-row">
+        <label>Price (excl. shipping)</label>
+        <label class="sum">€{{productToConfigure.price.toFixed(2)}}</label>
+      </div>
+      <div class="form-text-row">
+        <app-quantity-section (eventEmmit)="setQuantity($event)" [inputNumber]="quantityOfElement" ></app-quantity-section>
+        <label>Total Price:€{{(productToConfigure.quantity*productToConfigure.price).toFixed(2)}}</label> 
+      </div>
+      <button type="submit" class="dropbtn" id="config-submit-button" (click)="addTocart(productToConfigure)" >Add to Cart</button>
+    </fieldset>
+
+  </form> 
+ 
   </section>

@@ -28,7 +28,14 @@ export class SelectedItemComponent implements OnInit {
     'indigo',
     'coal'
   ];
-
+  
+  category : string []= [
+    "jewelery", 
+    "electronics", 
+    "men's clothing", 
+    "women's clothing"
+  ]
+  
   constructor(private productService : ProductService, private route:ActivatedRoute, private cartService : CartService) { }
 
   ngOnInit(): void {
