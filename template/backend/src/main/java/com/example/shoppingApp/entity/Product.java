@@ -2,30 +2,34 @@ package com.example.shoppingApp.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.Arrays;
+
 public class Product {
 
 
-    private Long id;
+    private int id;
     private String title;
     private double price;
     private String description;
     private String category;
     private String image;
-    private int[] rating;
-    private String size;
-    private String color;
-    private int quantity;
+    private double[] rating;
+//    private String size;
+//    private String color;
+//    private int quantity;
 
-    public Product (@JsonProperty("id")Long id,
+    public Product (@JsonProperty("id")int id,
                  @JsonProperty("title")String title,
                  @JsonProperty("price")double price,
                  @JsonProperty("description")String description,
                  @JsonProperty("category")String category,
                  @JsonProperty("image")String image,
-                 @JsonProperty("rating")int[] rating,
-                 @JsonProperty("size")String size,
-                 @JsonProperty("color")String color,
-                 @JsonProperty("size")int quantity) {
+                 @JsonProperty("rating")double[] rating
+//            ,
+//                 @JsonProperty("size")String size,
+//                 @JsonProperty("color")String color,
+//                 @JsonProperty("size")int quantity
+    ) {
         this.id = id;
         this.title = title;
         this.price = price;
@@ -33,16 +37,16 @@ public class Product {
         this.category = category;
         this.image = image;
         this.rating = rating;
-        this.size = size;
-        this.color = color;
-        this.quantity = quantity;
+//        this.size = size;
+//        this.color = color;
+//        this.quantity = quantity;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -87,36 +91,49 @@ public class Product {
         this.image = image;
     }
 
-    public int[] getRating() {
+    public double[] getRating() {
         return rating;
     }
 
-    public void setRating(int[] rating) {
+    public void setRating(double[] rating) {
         this.rating = rating;
     }
 
-    public String getSize() {
-        return size;
-    }
+//    public String getSize() {
+//        return size;
+//    }
+//
+//    public void setSize(String size) {
+//        this.size = size;
+//    }
+//
+//    public String getColor() {
+//        return color;
+//    }
+//
+//    public void setColor(String category) {
+//        this.color = color;
+//    }
+//
+//    public int getQuantity() {
+//        return quantity;
+//    }
+//
+//    public void setQuantity(int quantity) {
+//        this.quantity = quantity;
+//    }
 
-    public void setSize(String size) {
-        this.size = size;
-    }
 
-    public String getColor() {
-        return color;
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", price=" + price +
+                ", description='" + description + '\'' +
+                ", category='" + category + '\'' +
+                ", image='" + image + '\'' +
+                ", rating=" + Arrays.toString(rating) +
+                '}';
     }
-
-    public void setColor(String category) {
-        this.color = color;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
 }

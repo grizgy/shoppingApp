@@ -9,37 +9,37 @@ import java.util.Collection;
 @EntityScan
 public class User implements Serializable {
 
-    private Long id;
+    private Integer id;
     private String email;
     private String userName;
     private String password;
-    private int phone;
     private String firstName;
     private String lastname;
+    private Integer phone;
     private Collection<Product> products = new ArrayList<>();
 
 
-    public User (@JsonProperty("id")Long id,
+    public User (@JsonProperty("id")Integer id,
                  @JsonProperty("email")String email,
                  @JsonProperty("userName")String userName,
                  @JsonProperty("password")String password,
-                 @JsonProperty("phone")int phone,
                  @JsonProperty("userName")String firstName,
-                 @JsonProperty("password")String lastname) {
+                 @JsonProperty("password")String lastname,
+                 @JsonProperty("phone")Integer phone){
         this.id = id;
         this.email = email;
         this.userName = userName;
         this.password = password;
-        this.phone = phone;
         this.firstName = firstName;
         this.lastname = lastname;
+        this.phone = phone;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -75,11 +75,11 @@ public class User implements Serializable {
         this.firstName = firstName;
     }
 
-    public int getPhone() {
+    public Integer getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(Integer phone) {
         this.phone = phone;
     }
 
