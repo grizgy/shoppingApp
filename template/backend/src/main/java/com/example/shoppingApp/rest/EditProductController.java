@@ -1,14 +1,14 @@
 package com.example.shoppingApp.rest;
 
 import com.example.shoppingApp.entity.Product;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
 import java.util.List;
 
 @RestController
-@RequestMapping("edit/configuration")
-public class EditUserController {
+public class EditProductController {
 
     public static final List<Product> PRODUCTS = Arrays.asList(
             new Product(1,
@@ -91,21 +91,25 @@ public class EditUserController {
     );
 
     @GetMapping
+    @PreAuthorize("hasAuthority('Product:read')")
     public List <Product> getAllProducts() {
         return PRODUCTS;
     }
 
     @PostMapping
+    @PreAuthorize("hasAuthority('Product:write')")
     public void addNewProduct(@RequestBody Product product) {
         System.out.println(product);
     }
 
-    @DeleteMapping(path = {"productId"})
+    @DeleteMapping(path = "{productId}")
+    @PreAuthorize("hasAuthority('Product:write')")
     public void removeProduct(@PathVariable ("productId") Integer productId) {
         System.out.println(productId);
     }
 
-    @PutMapping(path = {"productId"})
+    @PutMapping(path = "{productId}")
+    @PreAuthorize("hasAuthority('Product:write')")
     public void editProduct(@PathVariable ("productId") Integer productId, @RequestBody Product product) {
         System.out.println(String.format("%s %s", productId, product));
     }

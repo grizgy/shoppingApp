@@ -3,6 +3,8 @@ package com.example.shoppingApp.security;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.authentication.configuration.EnableGlobalAuthentication;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -16,6 +18,7 @@ import static com.example.shoppingApp.security.ApplicationUserRole.*;
 
 @Configuration
 @EnableWebSecurity
+@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
 
     private final PasswordEncoder passwordEncoder;
@@ -30,8 +33,7 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
 
         http.csrf().disable()
             .authorizeRequests()
-            .antMatchers("/", "/cart")
-            .permitAll()
+            .antMatchers("/", "/cart", "/configuration/**").permitAll()
             .anyRequest()
             .authenticated()
             .and()
@@ -47,14 +49,14 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
         UserDetails KrisUser = User.builder()
                 .username("KrisHristov")
                 .password(passwordEncoder.encode("asdfg"))
-                .roles(STUDENT.name())
+                .authorities(USER.getSimpleGrantedAuthorities())
                 .build();
 
 
         UserDetails adminUser = User.builder()
                 .username("admin")
                 .password(passwordEncoder.encode("asdfg123"))
-                .roles(ADMIN.name())
+                .authorities(ADMIN.getSimpleGrantedAuthorities())
                 .build();
 
         return new InMemoryUserDetailsManager(
